@@ -51,7 +51,13 @@ def login():
     else:
         return jsonify({"message": "Credenciales inválidas"}), 401
 
+#if __name__ == '__main__':
+    # Configuración del Puerto 7890
+ #   print("Servidor corriendo en el puerto 7890...")
+  #  app.run(port=7890, debug=True)
+
 if __name__ == '__main__':
     # Configuración del Puerto 7890
     print("Servidor corriendo en el puerto 7890...")
-    app.run(port=7890, debug=True)
+    # El host='0.0.0.0' es fundamental para Docker
+    app.run(host='0.0.0.0', port=7890, debug=True)
