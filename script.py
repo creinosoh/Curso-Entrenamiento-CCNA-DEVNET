@@ -1,4 +1,5 @@
 # Script para solicitar y mostrar datos del usuario
+#Item 1
 
 # Solicitud de datos (Entrada)
 nombre = input("Introduce tu nombre: ")
