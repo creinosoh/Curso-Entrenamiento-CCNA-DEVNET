@@ -1,0 +1,10 @@
+[2026-04-24 17:36:50,755] +++ CSR1000V logfile interfaces_ipv6/connection_CSR1000V.txt +++
+[2026-04-24 17:36:50,756] +++ Unicon plugin iosxe +++
+Password: 
+[2026-04-24 17:36:50,893] +++ connection to spawn: ssh 192.168.56.101, id: 140416657140848 +++
+[2026-04-24 17:36:50,893] connection to CSR1000V
+
+
+
+
+CLAUDIA-REINOSO#

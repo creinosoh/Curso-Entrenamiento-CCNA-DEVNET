@@ -1,0 +1,14 @@
+---
+- name: Generar respaldo de la configuracion del router
+  hosts: routers
+  gather_facts: no
+  tasks:
+    - name: Ejecutar show running-config
+      ios_command:  # <--- Cambiado de cisco.ios.ios_command a ios_command
+        commands: show running-config
+      register: config_result
+
+    - name: Guardar la configuracion en un archivo local
+      copy:
+        content: "{{ config_result.stdout[0] }}"
+        dest: "./respaldo_router_config.txt"

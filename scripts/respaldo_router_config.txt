@@ -1,0 +1,192 @@
+Building configuration...
+
+Current configuration : 3963 bytes
+!
+! Last configuration change at 01:50:36 UTC Fri Apr 24 2026 by devasc
+!
+version 16.9
+service config
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console virtual
+!
+hostname CLAUDIA-REINOSO
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name devnet.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3903930378
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3903930378
+ revocation-check none
+ rsakeypair TP-self-signed-3903930378
+!
+!
+crypto pki certificate chain TP-self-signed-3903930378
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 33393033 39333033 3738301E 170D3236 30343233 30343037 
+  30325A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 39303339 
+  33303337 38308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100ED03 4890F313 3083BA86 C07D56CD 0B6739D0 CA57B588 84800E37 
+  87A7B778 D8A0F1E6 12CB0BBB D1206F05 0696BA68 6CFF87E2 CDFEAA60 26EC2B92 
+  6971A2FB 1C95234F A155873E A9B639EF F63D4066 F04F1439 D68565D0 0DD95CC2 
+  3C7BEC60 6754C38C 556E76F5 9004F3E1 03FE569A 47076A3E 1CAF6D0B 62BB76E4 
+  E8F94DBE 2D0CAA27 1D208BD9 17128BC6 FF9CA08A C4017E64 8E310602 4634426F 
+  2E8C5961 735646F9 4B36153A EE20B2F7 15CF5522 BB59BB74 CD574545 BA5DDCF2 
+  A59F60CA AACC3ABE 681A8FC2 577B2B14 2A6EB9F1 239E4928 939B31D7 0602613B 
+  47CB2449 DE996530 7177BA4F 1DDE25BC 61B6FC35 3D4332DD F224343B 44936F4E 
+  82BB0A28 23C90203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 1456B60C 9902D01D D9CBC9B3 84F853B4 07FF3AFD 
+  D6301D06 03551D0E 04160414 56B60C99 02D01DD9 CBC9B384 F853B407 FF3AFDD6 
+  300D0609 2A864886 F70D0101 05050003 82010100 E4093003 8031C4D0 DA5A8974 
+  9613FDED C7D5F160 A0281ADF 96C9B0FB A3D16585 49D72C5F 490E6AEC 1BA2DD9C 
+  39DCBEE0 CF7D0011 D289A3C7 C432BF6E C63E7297 D48DB40A 09AE50C7 4EDDEE4B 
+  E21CE273 DBC5AAE3 6893027D AB4B5648 357A88DC 39032EB8 9FDDE20E 1D040370 
+  18FBA376 A2C84132 B7E1DE7E 128D4189 7942EBAF 2BC75915 2D7DF4D0 8CD38631 
+  B9E2CEF6 49AAB3CD D1EBBABF 24600901 87D6F975 4F1CDC3B 7993944D C12C2C1B 
+  E6C55E27 8E4D647B 09592CD0 9E71E9B0 DE2C85FB 68C61388 2BD9DB82 AAAC313F 
+  AFEB5F01 76E521D5 5040E315 93D4D62F 897F0BD0 7540CDBB 4E082DA5 1BA366DF 
+  8B2CE5BC 52761633 63EB4CF7 0E2AE02B 33227EC9
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9N2KDQJJZVR
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+netconf-yang
+!
+restconf
+!
+username admin privilege 15 password 0 cisco
+username devasc privilege 15 secret 5 $1$Cpqh$7PWrtDbZQlhgTfVqVr3Gd.
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback11
+ description Loopback creada para examen - Estado Down
+ ip address 11.11.11.11 255.255.255.255
+ shutdown
+!
+interface Loopback22
+ ip address 22.22.22.22 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address dhcp
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address 192.168.56.101 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+router ospf 123
+ router-id 1.1.1.1
+ passive-interface default
+ no passive-interface GigabitEthernet1
+ no passive-interface GigabitEthernet2
+ network 0.0.0.0 255.255.255.255 area 0
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+ip http client source-interface GigabitEthernet1
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+!
+!
+!
+end
