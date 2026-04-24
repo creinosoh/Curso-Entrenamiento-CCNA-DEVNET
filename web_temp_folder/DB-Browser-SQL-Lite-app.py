@@ -51,10 +51,9 @@ def login():
     else:
         return jsonify({"message": "Credenciales inválidas"}), 401
 
-#if __name__ == '__main__':
-    # Configuración del Puerto 7890
- #   print("Servidor corriendo en el puerto 7890...")
-  #  app.run(port=7890, debug=True)
+@app.route('/')
+def index():
+    return "<h1>Examen Final CCNA DEVNET - Sistema de Usuarios</h1><p>Servidor Flask funcionando correctamente.</p>"
 
 if __name__ == '__main__':
     # Configuración del Puerto 7890

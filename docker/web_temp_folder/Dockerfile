@@ -1,7 +1,7 @@
 FROM python:3.10-slim
-WORKDIR /app
 RUN pip install flask flask_sqlalchemy werkzeug
-COPY . .
-# El puerto interno de tu app según el Ítem 2 es 7890
+COPY . /app
+WORKDIR /app
+# El contenedor expone el puerto que usa Flask
 EXPOSE 7890
 CMD ["python", "DB-Browser-SQL-Lite-app.py"]
